@@ -7,7 +7,7 @@ export default async function createTurma(req: Request, res: Response): Promise<
         const { turma_id, nome, modulo } = req.body
         const turma = new TurmaModel(turma_id, nome, modulo)
         const turmaDB = new TurmaDataBase()
-        await turmaDB.insert(turma)
+        await turmaDB.insertTurma(turma)
         res.status(201).send("Turma Criada!")
 
     } catch (error: any) {

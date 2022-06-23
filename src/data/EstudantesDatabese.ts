@@ -8,8 +8,6 @@ export default class EstudantesDatabase extends BaseDataBase {
             .select("*")
             .where('nome', 'like', `%${nome}%`)
 
-            console.log(result)
-
             if(result.length == 0){
                 throw new Error("Nome não encontrado")
             }
