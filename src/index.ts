@@ -7,6 +7,7 @@ import getDocentes from "./endpoints/getDocentes"
 import createDocente from "./endpoints/createDocente"
 import findActiveClass from "./endpoints/findActiveClass";
 import atualizarModulo from "./endpoints/atualizarModulo";
+import atualizarDocenteTurma from "./endpoints/AtualizarDocenteTurma";
 import EstudantesDatabase from "./data/EstudantesDatabese";
 import atualizarTurmaEstudante from "./endpoints/atualizarTurmaEstudante";
 
@@ -18,3 +19,4 @@ app.put("/estudante/:id", atualizarTurmaEstudante)
 app.post("/docente", createDocente)
 app.get("/docentes", getDocentes)
 app.put("/turma/:id", atualizarModulo)
+app.put("/docente/:id", atualizarDocenteTurma)

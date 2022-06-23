@@ -26,4 +26,15 @@ export default class DocentesDataBase extends BaseDataBase {
             
         }
     }
+    public async mudarDocenteTurma(id: number, turma_id: number) {
+        try {
+            await BaseDataBase.connection("Doscentes")
+            .update({
+                turma_id: turma_id
+            }).where("id", id)
+            console.log("Deu certo!")
+        } catch (error: any) {
+            console.log(error.sqlMessage || error.message)
+        }
+    }
 }
