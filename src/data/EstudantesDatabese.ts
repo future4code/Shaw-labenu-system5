@@ -20,7 +20,7 @@ export default class EstudantesDatabase extends BaseDataBase {
         }
     }
 
-    public async insert(estudante: EstudanteModel) {
+    public async insertEstudante(estudante: EstudanteModel) {
         try {
             await BaseDataBase.connection("Estudante")
                 .insert({
