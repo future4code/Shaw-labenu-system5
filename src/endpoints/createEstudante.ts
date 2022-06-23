@@ -9,6 +9,7 @@ export default async function Estudante(req: Request, res: Response): Promise<vo
         const estudanteDB = new EstudantesDatabase()
         await estudanteDB.insertEstudante(estudante)
         res.status(201).send("Estudante Criado!")
+        console.log(estudante)
 
     } catch (error: any) {
         res.status(500).send(error.sqlMessage || error.message)
