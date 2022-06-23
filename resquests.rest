@@ -14,14 +14,16 @@ Content-Type: application/json
 GET http://localhost:3003/docentes
 
 ###
+
+
 POST http://localhost:3003/estudante
 Content-Type: application/json
 
 {
-    "nome": "Sonia",
-    "email": "passsa@gmail.com",
-    "data_nasc": "1950-11-04",
-    "turma_id": 2
+    "nome": "Carol",
+    "email": "carolzdsfgdhfsha@gmail.com",
+    "data_nasc": "1976-12-04",
+    "turma_id": 4
 }
 
 ###
@@ -48,10 +50,9 @@ Content-Type: application/json
 }
 
 ###
-
-PUT http://localhost:3003/docente/3 
+PUT http://localhost:3003/estudante/3
 Content-Type: application/json
 
-{ 
-    "turma_id": 4
-}
+{
+    "turma_id": 456790654
+} 
