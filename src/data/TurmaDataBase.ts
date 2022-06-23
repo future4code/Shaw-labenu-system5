@@ -27,4 +27,15 @@ export class TurmaDataBase extends BaseDataBase {
             console.log("Erro inesperado")
         }
     }
+    public async mudarTurmaModulo(id: number, modulo: string) {
+        try {
+            await BaseDataBase.connection("Turma")
+            .update({
+                modulo: modulo
+            }).where ("id", id)
+            console.log("Deu certo!")
+        } catch (error: any) {
+            console.log(error.sqlMessage || error.message)
+        }
+    }
 }

@@ -37,3 +37,12 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3003/turma
+
+###
+
+PUT http://localhost:3003/turma/3
+Content-Type: application/json
+
+{
+    "modulo": "4"
+}
