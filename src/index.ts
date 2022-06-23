@@ -6,7 +6,8 @@ import createEstudante from "./endpoints/createEstudante"
 import getDocentes from "./endpoints/getDocentes"
 import createDocente from "./endpoints/createDocente"
 import findActiveClass from "./endpoints/findActiveClass";
-import atualizarModulo from "./endpoints/AtualizarModulo";
+import atualizarModulo from "./endpoints/atualizarModulo";
+import atualizarDocenteTurma from "./endpoints/AtualizarDocenteTurma";
 
 app.get("/students/:nome", getByNameAll)
 app.get("/turma", findActiveClass)
@@ -15,3 +16,4 @@ app.post("/estudante", createEstudante)
 app.post("/docente", createDocente)
 app.get("/docentes", getDocentes)
 app.put("/turma/:id", atualizarModulo)
+app.put("/docente/:id", atualizarDocenteTurma)
