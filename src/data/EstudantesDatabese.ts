@@ -32,4 +32,18 @@ export default class EstudantesDatabase extends BaseDataBase {
             throw new Error(error.sqlMessage)
         }
     }
+
+    public async mudarTurma(id: number, turma_id: number) {
+        try {
+            await BaseDataBase.connection("Estudante")
+            .update({
+                turma_id: turma_id
+            })
+            .where("id", id)
+
+            console.log('deu certo')
+        } catch (error: any) {
+            throw new Error("Erro inesperado, verificar informações passadas")
+        }
+    }
 }
