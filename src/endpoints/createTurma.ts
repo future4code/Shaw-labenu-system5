@@ -4,8 +4,8 @@ import { TurmaDataBase } from '../data/TurmaDataBase'
 
 export default async function createTurma(req: Request, res: Response): Promise<void> {
     try {
-        const { nome, modulo } = req.body
-        const turma = new TurmaModel(nome, modulo)
+        const { turma_id, nome, modulo } = req.body
+        const turma = new TurmaModel(turma_id, nome, modulo)
         const turmaDB = new TurmaDataBase()
         await turmaDB.insert(turma)
         res.status(201).send("Turma Criada!")
