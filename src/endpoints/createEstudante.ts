@@ -7,7 +7,7 @@ export default async function Estudante(req: Request, res: Response): Promise<vo
         const { nome, email, data_nasc, turma_id} = req.body
         const estudante = new EstudanteModel(nome, email, data_nasc,  turma_id )
         const estudanteDB = new EstudantesDatabase()
-        await estudanteDB.insert(estudante)
+        await estudanteDB.insertEstudante(estudante)
         res.status(201).send("Estudante Criado!")
 
     } catch (error: any) {
