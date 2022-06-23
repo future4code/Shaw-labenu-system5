@@ -1,8 +1,6 @@
 import knex from "knex"
-import dotenv from 'dotenv'
-
+import dotenv from "dotenv"
 dotenv.config()
-console.log(process.env.DB_HOST)
 
 export class BaseDataBase {
     protected static connection = knex({
@@ -12,7 +10,7 @@ export class BaseDataBase {
             port: 3306,
             user: process.env.DB_USER,
             password: process.env.DB_PASSWORD,
-            database: process.env.DB_SHEMA
+            database: process.env.DB_SCHEMA
         }
     })
 }

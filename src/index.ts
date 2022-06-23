@@ -1,5 +1,10 @@
-import EstudantesDatabase from "./data/EstudantesDatabese"
+import app from "./app"
+import getByNameAll from "./endpoints/getByName"
+import createTurma from "./endpoints/createTurma"
+// import createEstudante from "./endpoints/createEstudante"
+import getDocentes from "./endpoints/getDocentes"
 
-const all = new EstudantesDatabase()
-
-console.log(all.getByName("LAURA"))
+app.get("/students/:nome", getByNameAll)
+app.post("/turma", createTurma)
+// app.post("students", createEstudante)
+app.get("/docentes", getDocentes)
