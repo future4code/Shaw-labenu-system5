@@ -4,13 +4,13 @@ import EstudantesDatabase from '../data/EstudantesDatabese'
 
 export default async function Estudante(req: Request, res: Response): Promise<void> {
     try {
-        const { nome, email, data_nasc, id_turma } = req.body
-        const estudante = new EstudanteModel(nome, email, data_nasc, /* id_turma */)
+        const { nome, email, data_nasc, turma_id} = req.body
+        const estudante = new EstudanteModel(nome, email, data_nasc,  turma_id )
         const estudanteDB = new EstudantesDatabase()
         await estudanteDB.insert(estudante)
         res.status(201).send("Estudante Criado!")
 
     } catch (error: any) {
-        res.status(500).end()
+        res.status(500).send(error.sqlMessage || error.message)
     }
 }

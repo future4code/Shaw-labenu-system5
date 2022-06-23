@@ -1,5 +1,6 @@
 export class TurmaModel {
     constructor(
+        private turma_id: number,
         private nome: string,
         private modulo: string
     ) { }
@@ -9,5 +10,8 @@ export class TurmaModel {
     }
     public getModulo(): string {
         return this.modulo
+    }
+    public getTurma_id(): number{
+        return this.turma_id
     }
 }

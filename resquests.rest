@@ -12,3 +12,14 @@ Content-Type: application/json
 ###
 
 GET http://localhost:3003/docentes
+
+###
+POST http://localhost:3003/estudante
+Content-Type: application/json
+
+{
+    "nome": "Sonia",
+    "email": "passsa@gmail.com",
+    "data_nasc": "1950-11-04",
+    "turma_id": 2
+}
