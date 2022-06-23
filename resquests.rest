@@ -29,8 +29,11 @@ POST http://localhost:3003/docente
 Content-Type: application/json
 
 {
-    "nome": "Neusa",
-    "email": "neusa@gmail.com",
-    "data_nasc": "1987-07-04",
-    "turma_id": 2
+    "nome": "Lila",
+    "email": "lila@gmail.com",
+    "data_nasc": "1999-06-12",
+    "turma_id": 1
 }
+
+###
+GET http://localhost:3003/turma

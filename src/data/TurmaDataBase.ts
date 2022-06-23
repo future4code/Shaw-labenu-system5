@@ -2,7 +2,7 @@ import { TurmaModel } from '../model/TurmaModel';
 import { BaseDataBase } from './BaseDataBase'
 
 export class TurmaDataBase extends BaseDataBase {
-    public async insert(turma: TurmaModel) {
+    public async insertTurma(turma: TurmaModel) {
         try {
             await BaseDataBase.connection("Turma")
                 .insert({
@@ -13,6 +13,18 @@ export class TurmaDataBase extends BaseDataBase {
                 })
         } catch (error: any) {
             throw new Error("Erro inesperado")
+        }
+    }
+
+    public async acheTurmaAtiva() {
+        try {
+            const result = await BaseDataBase.connection("Turma")
+                .select('*')
+                .where('modulo', '<>', `${0}`)
+
+            return (result)
+        } catch (error: any) {
+            console.log("Erro inesperado")
         }
     }
 }
