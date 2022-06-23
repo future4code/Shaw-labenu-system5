@@ -6,7 +6,7 @@ export class TurmaDataBase extends BaseDataBase {
         try {
             await BaseDataBase.connection("Turma")
                 .insert({
-                    // id: turma.getId(),
+                    id: turma.getTurma_id(),
                     nome: turma.getNome(),
                     modulo: turma.getModulo()
 
