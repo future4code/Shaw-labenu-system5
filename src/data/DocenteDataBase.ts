@@ -8,11 +8,11 @@ export default class DocentesDataBase extends BaseDataBase {
             .select("*")
             return result
         } catch (error: any) {
-            console.log(error.sqlMessage || error.message)
+            throw new Error("Erro inesperado, verificar requisição")
         }
     }
 
-    public async insertDocente(docente: DocenteModel) {
+    public async criarDocente(docente: DocenteModel) {
         try {
             await BaseDataBase.connection("Doscentes")
                 .insert({
@@ -22,7 +22,7 @@ export default class DocentesDataBase extends BaseDataBase {
                     turma_id: docente.getTurmaId()
                 })
         } catch (error: any) {
-            throw new Error(error.sqlMessage || error.message);
+            throw new Error("Erro inesperado, verificar informações passadas");
             
         }
     }
@@ -32,9 +32,8 @@ export default class DocentesDataBase extends BaseDataBase {
             .update({
                 turma_id: turma_id
             }).where("id", id)
-            console.log("Deu certo!")
         } catch (error: any) {
-            console.log(error.sqlMessage || error.message)
+            throw new Error("Erro inesperado, verificar informações passadas")
         }
     }
 }

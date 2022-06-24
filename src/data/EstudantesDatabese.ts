@@ -2,7 +2,7 @@ import { BaseDataBase } from "./BaseDataBase";
 import { EstudanteModel } from "../model/EstudanteModel";
 
 export default class EstudantesDatabase extends BaseDataBase {
-    public async getByName(nome: string) {
+    public async getEstudantePorNome(nome: string) {
         try {
             const result = await BaseDataBase.connection("Estudante")
             .select("*")
@@ -14,11 +14,11 @@ export default class EstudantesDatabase extends BaseDataBase {
 
             return(result)
         } catch (error: any) {
-            console.log(error.sqlMessage || error.message)
+            throw new Error("Erro inesperado, verificar informações passadas")
         }
     }
 
-    public async insertEstudante(estudante: EstudanteModel) {
+    public async inserirEstudante(estudante: EstudanteModel) {
         try {
             await BaseDataBase.connection("Estudante")
                 .insert({
@@ -29,7 +29,7 @@ export default class EstudantesDatabase extends BaseDataBase {
 
                 })
         } catch (error: any) {
-            throw new Error(error.sqlMessage)
+            throw new Error("Erro inesperado, verificar informações passadas")
         }
     }
 
@@ -40,8 +40,6 @@ export default class EstudantesDatabase extends BaseDataBase {
                 turma_id: turma_id
             })
             .where("id", id)
-
-            console.log('deu certo')
         } catch (error: any) {
             throw new Error("Erro inesperado, verificar informações passadas")
         }
