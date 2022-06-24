@@ -1,12 +1,12 @@
 import { Request, Response } from "express";
 import { TurmaDataBase } from "../data/TurmaDataBase";
 
-export default async function findActiveClass(req: Request, res: Response) {
+export default async function acharTurmaAtiva(req: Request, res: Response) {
     try {
        const turmaDB = new TurmaDataBase()
-       const turma = await turmaDB.acheTurmaAtiva()
+       const turma = await turmaDB.acharTurmaAtiva()
        res.status(200).send(turma)
     } catch (error: any) {
-        res.status(404).send(error.sqlMessage || error.message)
+        res.status(404).send(error.message)
     }
 }

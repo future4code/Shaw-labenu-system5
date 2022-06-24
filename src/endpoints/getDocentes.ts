@@ -7,6 +7,6 @@ export default async function getDocentes(req: Request, res: Response): Promise<
         const docentes = await docenteDB.getDocentes()
         res.status(200).send(docentes)
     } catch (error: any) {
-        throw new Error("Socorro Deus")
+        res.status(500).send(error.message)
     }
 }

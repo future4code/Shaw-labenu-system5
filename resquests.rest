@@ -1,12 +1,11 @@
-GET http://localhost:3003/students/Laura
+GET http://localhost:3003/estudante/Laura  
 
 ###
 POST http://localhost:3003/turma 
 Content-Type: application/json
 
 {
-    "nome": "Silveira",
-    "modulo": 1
+    "nome": "Amancio"
 }
 
 ###
@@ -20,10 +19,10 @@ POST http://localhost:3003/estudante
 Content-Type: application/json
 
 {
-    "nome": "Carol",
-    "email": "carolzdsfgdhfsha@gmail.com",
-    "data_nasc": "1976-12-04",
-    "turma_id": 4
+    "nome": "Rodrigo",
+    "email": "roro@hotmail.com",
+    "data_nasc": "15/11/1987",
+    "turma_id": 12
 }
 
 ###
@@ -31,10 +30,10 @@ POST http://localhost:3003/docente
 Content-Type: application/json
 
 {
-    "nome": "Lila",
-    "email": "lila@gmail.com",
-    "data_nasc": "1999-06-12",
-    "turma_id": 1
+    "nome": "Chijo",
+    "email": "lele@gmail.com",
+    "data_nasc": "12/01/1990",
+    "turma_id": 12
 }
 
 ###
@@ -46,13 +45,22 @@ PUT http://localhost:3003/turma/3
 Content-Type: application/json
 
 {
-    "modulo": "4"
+    "modulo": "7"
 }
 
 ###
-PUT http://localhost:3003/estudante/3
+PUT http://localhost:3003/estudante/1
 Content-Type: application/json
 
 {
-    "turma_id": 456790654
+    "turma_id": 12
+} 
+
+###
+
+PUT http://localhost:3003/docente/1
+Content-Type: application/json
+
+{
+    "turma_id": ""
 } 

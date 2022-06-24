@@ -9,6 +9,6 @@ export default async function atualizarModulo(req: Request, res: Response): Prom
         await turmaDB.mudarTurmaModulo(id, modulo)
         res.status(200).end("Atualizado!")
     } catch (error: any) {
-        res.status(500).send(error.sqlMessage || error.message)
+        res.status(500).send(error.message)
     }
 }
