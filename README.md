@@ -1,7 +1,5 @@
 ## LabenuSystem:
 
-### [Link para documentação](https://documenter.getpostman.com/view/20352183/UzBqq5rG)
-
 As funcionalidades básicas são:
 
 → Criar estudante;
@@ -15,3 +13,5 @@ As funcionalidades básicas são:
 → Adicionar docente na turma;
 
 → Pegar a idade de algum estudante a partir do id
+
+##### [Link para documentação](https://documenter.getpostman.com/view/20352183/UzBqq5rG)
