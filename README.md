@@ -1,4 +1,4 @@
-## LabenuSystem:
+## LabenuSystem da labenu:
 
 As funcionalidades básicas são:
 
